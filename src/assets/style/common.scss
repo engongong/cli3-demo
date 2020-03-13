@@ -1,0 +1,27 @@
+.cover-enter {
+    transform: translate3d(100%, 0, 0);
+  }
+  
+  .cover-enter-active,.cover-leave-active  {
+    transition: all .5s;
+  }
+  
+  .cover-leave-to {
+    transform: translate3d(100%, 0, 0);
+  }
+
+
+  /*
+ * 内嵌级路由视图
+ */
+
+.second-view {
+    position: absolute;
+    left: 0;
+    right: 0;
+    top: 0;
+    bottom: 0;
+    z-index: 100;
+    background-color: #fff;
+    overflow: hidden;
+  }
