@@ -2,6 +2,16 @@ import Vue from 'vue';
 import App from '../../App';
 import router from './router';
 import '../../assets/style/common.scss'
+import store from '../../store/index.js';
+// import vuex from 'vuex';
+// Vue.use(vuex);
+
+// var store = new vuex.Store({
+//     state:{
+//         show:1
+//     }
+// })
+
 import {
   Picker,
   Button
@@ -11,6 +21,7 @@ const vantComponents = [Picker, Button];
 vantComponents.reduce((accu, cur) => {
   return accu ? accu.use(cur) : Vue.use(cur);
 }, null);
+
 
 router.beforeEach((to, from, next) => {
   /* 路由发生变化修改页面title */
@@ -22,6 +33,7 @@ router.beforeEach((to, from, next) => {
 
 
 new Vue({
+  store, //使用store
   router,
   render: h => h(App)
 }).$mount('#app')

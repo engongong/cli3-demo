@@ -14,7 +14,7 @@ let routes = [{
     path: '/list',
     name: 'list',
     meta: {
-      'title': '...',
+      'title': '诗',
     },
     component: () => import('./List.vue')
   }]
