@@ -18,7 +18,6 @@ export default {
       this.$router.push("/list")
     },
     clickStore(){
-      console.log(this.$store.state.show);
       this.$nextTick(function () {
 		     this.$store.state.show++;
     	})

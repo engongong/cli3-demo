@@ -1,0 +1,261 @@
+@mixin ellipsis {
+    overflow: hidden;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
+    -webkit-touch-callout: none;
+    -webkit-overflow-scrolling: touch;
+    -webkit-touch-callout: none;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+}
+
+a {
+    text-decoration: none;
+    outline: none;
+    color: $primary_black;
+}
+
+em {
+    font-style: normal;
+}
+
+ul {
+    padding: 0px;
+    margin: 0px;
+}
+
+li {
+    list-style: none;
+}
+
+a,
+button,
+input,
+select,
+textarea {
+    outline: 0;
+    -webkit-user-select: text;
+    -moz-user-select: text;
+    -ms-user-select: text;
+    user-select: text;
+}
+
+html {
+    position: relative;
+    height: 100%;
+    overflow: hidden;
+    // 1rem = 100px, 100vw = 750px, 1rem = 13.33333vw
+    font-size: calc(100vw / 7.5);
+    font-family: "Helvetica Neue", Helvetica, "PingFang SC", "Hiragino Sans GB", "Microsoft YaHei", "微软雅黑", Arial, sans-serif;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+}
+
+body {
+    height: 100%;
+    position: relative;
+    font-weight: normal;
+    font-size: 12px;
+    line-height: 1.2;
+    overflow: hidden;
+    color: $primary_black;
+    background-color: #fff;
+}
+
+#app {
+    height: 100%;
+}
+
+.fl {
+    float: left;
+}
+
+.fr {
+    float: right;
+}
+
+.tc {
+    text-align: center;
+}
+
+.tl {
+    text-align: left;
+}
+
+.tr {
+    text-align: right;
+}
+
+// 清除浮动
+.clearfix:after {
+    content: "";
+    display: block;
+    visibility: hidden;
+    font-size: 0;
+    height: 0;
+    clear: both;
+}
+
+// 淡入淡出动画
+.fade-enter,
+.fade-leave-to {
+    opacity: 0;
+}
+
+.fade-enter-active,
+.fade-leave-active {
+    transition: opacity .3s;
+}
+
+// 滑入滑出动画(右到左)
+.slide-right-enter,
+.slide-right-leave-to {
+    transform: translate3d(100%, 0, 0);
+}
+
+.slide-right-enter-active,
+.slide-right-to-active {
+    transition: transform .3s;
+}
+
+// 滑入滑出动画(左到右)
+.slide-left-enter,
+.slide-left-leave-to {
+    transform: translate3d(-100%, 0, 0);
+}
+
+.slide-left-enter-active,
+.slide-left-to-active {
+    transition: transform .3s;
+}
+
+// 手风琴展开关闭动画
+.accordion-enter,
+.accordion-leave-to {
+    max-height: 0;
+}
+
+.accordion-enter-to,
+.accordion-leave {
+    max-height: 178px;
+}
+
+.accordion-enter-active,
+.accordion-leave-active {
+    transition: all 0.3s ease-out;
+}
+
+// 模拟Popup弹出
+.popup-enter,
+.popup-leave-to {
+    transform: translateY(-104px);
+    opacity: 0;
+}
+
+.popup-enter-to,
+.popup-leave {
+    transform: translateY(0);
+    opacity: 1;
+}
+
+.popup-enter-active,
+.popup-leave-active {
+    transition: all 0.3s ease-out;
+}
+
+// 缩放动画
+.bounce-enter-active {
+    animation: bounce-in 0.3s;
+}
+
+.bounce-leave-active {
+    animation: bounce-in 0.3s reverse;
+}
+
+@keyframes bounce-in {
+    0% {
+        transform: translate(-50%, -50%) scale(0);
+    }
+
+    100% {
+        transform: translate(-50%, -50%) scale(1);
+    }
+}
+
+// 主路由视图
+.main-view {
+    position: fixed;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    z-index: 99;
+    overflow: hidden;
+    background-color: #fff;
+}
+
+// 内嵌级路由视图
+.second-view {
+    position: fixed;
+    left: 0;
+    right: 0;
+    top: 0;
+    bottom: 0;
+    z-index: 100;
+    overflow: hidden;
+    background-color: #fff;
+}
+
+// 清除移动端输入框内阴影
+input,
+textarea,
+select {
+    color: $primary_black;
+    font-family: "Helvetica Neue", Helvetica, "PingFang SC", "Hiragino Sans GB", "Microsoft YaHei", "微软雅黑", Arial, sans-serif;
+    // -webkit-appearance: none;
+
+    &::placeholder {
+        color: $grey_level3;
+    }
+}
+
+textarea {
+    resize: none;
+    -webkit-font-smoothing: antialiased !important;
+    -moz-osx-font-smoothing: grayscale !important;
+}
+
+// 遮罩层
+.mask {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    z-index: 97;
+    background-color: rgba(0, 0, 0, 0.3);
+}
+
+// 输入框光标闪烁动画
+@keyframes flicker {
+    0% {
+        opacity: 1;
+    }
+
+    100% {
+        opacity: 0;
+    }
+}
+
+.van-overlay {
+    background-color: rgba(0, 0, 0, 0.3);
+}
