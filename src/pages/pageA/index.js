@@ -2,7 +2,7 @@ import Vue from 'vue';
 import App from '../../App';
 import router from './router';
 import '../../assets/style/common.scss'
-import store from '../../store/index.js';  //  得加index.js，不然.$store.state.show初始为undefined
+import store from '../../store/index.js';  //  得加.js，不然.$store.state.show初始为undefined
 // import vuex from 'vuex';
 // Vue.use(vuex);
 

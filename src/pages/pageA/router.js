@@ -11,7 +11,7 @@ let routes = [{
   },
   component: () => import('./Home.vue'),
   children: [{
-    path: '/list',
+    path: '/list/:id',
     name: 'list',
     meta: {
       'title': '诗',

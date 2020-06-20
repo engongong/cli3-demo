@@ -13,6 +13,10 @@ export default {
     back(){
       this.$router.go(-1)
     }
+  },
+  mounted(){
+    console.log(this.$router);
+    console.log(this.$route);
   }
 }
 </script>
