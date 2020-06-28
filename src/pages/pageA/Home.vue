@@ -5,6 +5,10 @@
       <img src="~images/icon_th@2x.png" alt />
     </p>
     <van-button type="primary" @click="next">下一句</van-button>
+<div class="circle1">
+    <div class="cir cir1"></div>
+    <div class="cir cir2"></div>
+</div>
     <!-- <van-button type="primary" @click="clickStore">{{ $store.state.show}}</van-button> -->
     <!-- 旋转动画 -->
     <!-- <div class="circle">
@@ -37,6 +41,25 @@ export default {
 p {
   font-size: 2rem;
   color: $background_blue_level1;
+}
+.circle1{
+    position: relative;
+    width: 200px;
+    height: 200px;
+    border-radius: 100px;
+    background-color: yellow;
+}
+.cir{
+    position: absolute;
+    width: 200px;
+    height: 200px;
+    transform: rotate(30deg);
+    clip: rect(0px, 100px, 200px, 0px);
+    border-radius: 100px;
+    background-color: red;
+}
+.cir2 {
+  transform: rotate(-90deg);
 }
 .circle {
   position: relative;
