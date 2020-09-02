@@ -15,14 +15,13 @@ export default {
     }
   },
   mounted(){
-    console.log(this.$router);
-    console.log(this.$route);
+ 
   }
 }
 </script>
 
 <style lang="scss" scoped>
 p {
-  font-size: 2rem;
+  font-size: 32px;
 }
 </style>

@@ -11,6 +11,7 @@ module.exports = {
       .set('images', path.join(__dirname, 'src/assets/images'))
       .set('components', path.join(__dirname, 'src/components'))
       .set('style', path.join(__dirname, 'src/style'))
+      .set('store', path.join(__dirname, 'src/store'))
       .end()
       .symlinks(true); // 修复HMR
   },

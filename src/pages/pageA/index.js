@@ -1,8 +1,14 @@
 import Vue from 'vue';
 import App from '../../App';
 import router from './router';
+import store from 'store/index.js';  //  得加.js，不然.$store.state.show初始为undefined
+// import '../../assets/style/common.scss';
 import '../../assets/style/common.scss'
-import store from '../../store/index.js';  //  得加.js，不然.$store.state.show初始为undefined
+import 'style/theme.scss'
+import vMessage from '../../components/Message/index'
+
+Vue.use(vMessage)
+Vue.prototype.$vMessage = vMessage
 // import vuex from 'vuex';
 // Vue.use(vuex);
 

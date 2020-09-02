@@ -1,10 +1,10 @@
 import Vue from 'vue';
 import vuex from 'vuex'
+import count from './count'
 Vue.use(vuex);
-
 var store = new vuex.Store({
-    state:{
-        show:1
+    modules:{
+        count:count,
     }
 })
 

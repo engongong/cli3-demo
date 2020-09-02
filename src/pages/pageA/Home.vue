@@ -4,11 +4,15 @@
       千山鸟飞绝，万径人踪灭
       <img src="~images/icon_th@2x.png" alt />
     </p>
+    {{$store.state.count.num}}
+  <div>
     <van-button type="primary" @click="next">下一句</van-button>
-<div class="circle1">
+    <van-button type="primary" @click="$store.commit('add')">+1</van-button>
+  </div>
+<!-- <div class="circle1">
     <div class="cir cir1"></div>
     <div class="cir cir2"></div>
-</div>
+</div> -->
     <!-- <van-button type="primary" @click="clickStore">{{ $store.state.show}}</van-button> -->
     <!-- 旋转动画 -->
     <!-- <div class="circle">
@@ -26,11 +30,12 @@
 export default {
   methods: {
     next() {
-      this.$router.push("/list/1");
+      this.$message.info('普通消息')
+      // this.$router.push("/list/1");
     },
     clickStore() {
       this.$nextTick(function() {
-        this.$store.state.show++;
+        // this.$store.state.show++;
       });
     }
   }
@@ -38,8 +43,11 @@ export default {
 </script>
 
 <style lang="scss" scoped>
+h2{
+  color:$primary_blue;
+}
 p {
-  font-size: 2rem;
+  font-size: 32px;
   color: $background_blue_level1;
 }
 .circle1{
