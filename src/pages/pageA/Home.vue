@@ -4,12 +4,12 @@
       千山鸟飞绝，万径人踪灭
       <img src="~images/icon_th@2x.png" alt />
     </p>
-    {{$store.state.count.num}}
-  <div>
-    <van-button type="primary" @click="next">下一句</van-button>
-    <van-button type="primary" @click="$store.commit('add')">+1</van-button>
-  </div>
-<!-- <div class="circle1">
+    {{ $store.state.count.num }}
+    <div>
+      <van-button type="primary" @click="next">下一句</van-button>
+      <van-button type="primary" @click="$store.commit('add')">+1</van-button>
+    </div>
+    <!-- <div class="circle1">
     <div class="cir cir1"></div>
     <div class="cir cir2"></div>
 </div> -->
@@ -30,41 +30,61 @@
 export default {
   methods: {
     next() {
-      this.$message.info('普通消息')
-      // this.$router.push("/list/1");
+      // this.$message.info('普通消息')
+      this.$router.push("/list/1");
     },
     clickStore() {
-      this.$nextTick(function() {
+      this.$nextTick(function () {
         // this.$store.state.show++;
       });
-    }
-  }
+    },
+    createdSocket() {
+      var ws = new WebSocket("wss://echo.websocket.org");
+
+      ws.onopen = function (evt) {
+        console.log("Connection open ...");
+        ws.send("Hello WebSockets!");
+      };
+
+      ws.onmessage = function (evt) {
+        console.log("Received Message: " + evt.data);
+        ws.close();
+      };
+
+      ws.onclose = function (evt) {
+        console.log("Connection closed.");
+      };
+    },
+  },
+  mounted(){
+    this.createdSocket()
+   }
 };
 </script>
 
 <style lang="scss" scoped>
-h2{
-  color:$primary_blue;
+h2 {
+  color: $primary_blue;
 }
 p {
   font-size: 32px;
   color: $background_blue_level1;
 }
-.circle1{
-    position: relative;
-    width: 200px;
-    height: 200px;
-    border-radius: 100px;
-    background-color: yellow;
+.circle1 {
+  position: relative;
+  width: 200px;
+  height: 200px;
+  border-radius: 100px;
+  background-color: yellow;
 }
-.cir{
-    position: absolute;
-    width: 200px;
-    height: 200px;
-    transform: rotate(30deg);
-    clip: rect(0px, 100px, 200px, 0px);
-    border-radius: 100px;
-    background-color: red;
+.cir {
+  position: absolute;
+  width: 200px;
+  height: 200px;
+  transform: rotate(30deg);
+  clip: rect(0px, 100px, 200px, 0px);
+  border-radius: 100px;
+  background-color: red;
 }
 .cir2 {
   transform: rotate(-90deg);
